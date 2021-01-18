@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 server.get('/', (req, res) => {
   res.send('Hello Express2!');
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 1; i++) {
     console.log(`Foooo`);
   }
 });
