@@ -7,6 +7,21 @@ server.use(express.static('public'));
 
 server.get('/', (_req, res) => {
   res.send('Hello Express!');
+  var body = {
+        'status': 'OK',
+        'request': {
+            'headers': req.headers
+        }
+    }
+  res.writeHead(200, {
+        'Content-Type': 'application/json',
+        'Strict-Transport-Security': 'null',
+        'Content-Security-Policy': 'null',
+        'X-Content-Type-Options': 'null',
+        'X-Frame-Options': 'null',
+        'X-XSS-Protection': 'null'
+    });
+  res.end(JSON.stringify(body, null, 4));
 });
 
 server.get('/fetch-wordpress-graphql', async (_req, res) => {
