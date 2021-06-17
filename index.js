@@ -15,11 +15,11 @@ server.get('/', (_req, res) => {
     }
   res.writeHead(200, {
         'Content-Type': 'application/json',
-        'Strict-Transport-Security': 'null',
-        'Content-Security-Policy': 'null',
-        'X-Content-Type-Options': 'null',
-        'X-Frame-Options': 'null',
-        'X-XSS-Protection': 'null'
+        'Strict-Transport-Security': 'test-sts',
+        'Content-Security-Policy': 'test-csp',
+        'X-Content-Type-Options': 'test-xto',
+        'X-Frame-Options': 'test-xfo',
+        'X-XSS-Protection': 'test-xxp'
     });
   res.end(JSON.stringify(body, null, 4));
 });
