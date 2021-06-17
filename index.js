@@ -10,16 +10,16 @@ server.get('/', (_req, res) => {
   var body = {
         'status': 'OK',
         'request': {
-            'headers': req.headers
+            'headers': _req.headers
         }
     }
   res.writeHead(200, {
         'Content-Type': 'application/json',
         'Strict-Transport-Security': 'max-age=315',
-        'Content-Security-Policy': 'test-csp',
-        'X-Content-Type-Options': 'test-xto',
-        'X-Frame-Options': 'test-xfo',
-        'X-XSS-Protection': 'test-xxp'
+        'Content-Security-Policy': 'default-src *',
+        'X-Content-Type-Options': 'nosniff',
+        'X-Frame-Options': 'SAMEORIGIN',
+        'X-XSS-Protection': '1; mode=block'
     });
   res.end(JSON.stringify(body, null, 4));
 });
