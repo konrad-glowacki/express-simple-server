@@ -15,7 +15,7 @@ server.get('/', (_req, res) => {
     res.writeHead(200, {
         'Content-Type': 'application/json',
         'Strict-Transport-Security': 'max-age=315',
-        'Content-Security-Policy': 'default-src *',
+        'Content-Security-Policy': 'null',
         'X-Content-Type-Options': 'nosniff',
         'X-Frame-Options': 'SAMEORIGIN',
         'X-XSS-Protection': '1; mode=block'
