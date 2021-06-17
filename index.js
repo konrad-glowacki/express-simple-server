@@ -15,7 +15,7 @@ server.get('/', (_req, res) => {
     }
   res.writeHead(200, {
         'Content-Type': 'application/json',
-        'Strict-Transport-Security': 'test-sts',
+        'Strict-Transport-Security': 'max-age=315',
         'Content-Security-Policy': 'test-csp',
         'X-Content-Type-Options': 'test-xto',
         'X-Frame-Options': 'test-xfo',
