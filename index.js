@@ -6,8 +6,13 @@ const PORT = process.env.PORT || 3300;
 server.use(express.static('public'));
 
 server.get('/', (_req, res) => {
-  res.send('Hello Express!');
-  res.writeHead(200, {
+    var body = {
+        'status': 'OK',
+        'request': {
+            'headers': _req.headers
+        }
+    }
+    res.writeHead(200, {
         'Content-Type': 'application/json',
         'Strict-Transport-Security': 'max-age=315',
         'Content-Security-Policy': 'default-src *',
@@ -15,6 +20,7 @@ server.get('/', (_req, res) => {
         'X-Frame-Options': 'SAMEORIGIN',
         'X-XSS-Protection': '1; mode=block'
     });
+    res.end(JSON.stringify(body, null, 4));
 });
 
 server.get('/fetch-wordpress-graphql', async (_req, res) => {
