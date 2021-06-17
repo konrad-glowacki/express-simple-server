@@ -14,11 +14,11 @@ server.get('/', (_req, res) => {
     }
     res.writeHead(200, {
         'Content-Type': 'application/json',
-        'Strict-Transport-Security': 'max-age=315',
-        'Content-Security-Policy': 'null',
-        'X-Content-Type-Options': 'null',
-        'X-Frame-Options': 'null',
-        'X-XSS-Protection': 'null'
+        // 'Strict-Transport-Security': 'max-age=315',
+        // 'Content-Security-Policy': 'null',
+        // 'X-Content-Type-Options': 'null',
+        // 'X-Frame-Options': 'null',
+        // 'X-XSS-Protection': 'null'
     });
     res.end(JSON.stringify(body, null, 4));
 });
