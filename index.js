@@ -16,9 +16,9 @@ server.get('/', (_req, res) => {
         'Content-Type': 'application/json',
         'Strict-Transport-Security': 'max-age=315',
         'Content-Security-Policy': 'null',
-        'X-Content-Type-Options': 'nosniff',
-        'X-Frame-Options': 'SAMEORIGIN',
-        'X-XSS-Protection': '1; mode=block'
+        'X-Content-Type-Options': 'null',
+        'X-Frame-Options': 'null',
+        'X-XSS-Protection': 'null'
     });
     res.end(JSON.stringify(body, null, 4));
 });
