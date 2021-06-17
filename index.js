@@ -1,62 +1,25 @@
-const axios = require('axios');
-const express = require('express');
-const server = express();
-const PORT = process.env.PORT || 3300;
+var http = require('http');
+const port = process.env.PORT || 8080;
 
-server.use(express.static('public'));
+http.createServer(function (req, res) {
+    console.log('Atlas security header tester received a request');
 
-server.get('/', (_req, res) => {
-  res.send('Hello Express!');
-  var body = {
+    var body = {
         'status': 'OK',
         'request': {
-            'headers': _req.headers
+            'headers': req.headers
         }
     }
-  res.writeHead(200, {
+
+    res.writeHead(200, {
         'Content-Type': 'application/json',
-        'Strict-Transport-Security': 'max-age=315',
-        'Content-Security-Policy': 'default-src *',
-        'X-Content-Type-Options': 'nosniff',
-        'X-Frame-Options': 'SAMEORIGIN',
-        'X-XSS-Protection': '1; mode=block'
+        'Strict-Transport-Security': 'null',
+        'Content-Security-Policy': 'null',
+        'X-Content-Type-Options': 'null',
+        'X-Frame-Options': 'null',
+        'X-XSS-Protection': 'null'
     });
-  res.end(JSON.stringify(body, null, 4));
-});
-
-server.get('/fetch-wordpress-graphql', async (_req, res) => {
-  const query = `
-    query QueryPosts {
-      posts {
-        nodes {
-          id
-          content
-          title
-          slug
-          featuredImage {
-            node {
-              mediaDetails {
-                sizes {
-                  sourceUrl
-                  name
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const response = await axios.post(process.env.GRAPHQL_API_URL, { query });
-  res.send(response.data.data.posts.nodes);
-});
-
-server.get('/envs', (req, res) => {
-  console.log(process.env);
-  res.send('Envs displayed in logs!');
-});
-
-server.listen(PORT, () => {
-  console.log(`Application is listening at port ${PORT}`);
+    res.end(JSON.stringify(body, null, 4));
+}).listen(port, () => {
+    console.log('Atlas security header tester listening on port: ', port);
 });
