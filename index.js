@@ -4,9 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 server.get('/', (req, res) => {
   res.send('Hello Express16!');
-  for (let i = 0; i < 1; i++) {
-    console.log(`Foooo`);
-  }
+  console.log(`Barrr`);
 });
 
 server.listen(PORT, () => {
