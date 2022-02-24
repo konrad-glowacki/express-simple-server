@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Simple Express Server",
   "main": "index.js",
+  "engines": {
+    "node": "14~"
+  },
   "scripts": {
     "start": "node index.js",
     "wpe-build": "node build.js"
