@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "wpe-build": "enpm config list"
+    "wpe-build": "npm config list"
   },
   "author": "Konrad Glowacki <konrad.glowacki@wpengine.com> (wpengine.com)",
   "license": "ISC",
