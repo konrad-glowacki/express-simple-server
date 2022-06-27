@@ -16,5 +16,4 @@
     "axios": "^0.21.1",
     "express": "^4.17.1"
   },
-  "packageManager": "yarn@1.22.11"
 }
