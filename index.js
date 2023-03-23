@@ -7,7 +7,7 @@ server.use(express.static('public'));
 
 server.get('/', (_req, res) => {
     var body = {
-        'status': 'OK2',
+        'status': 'OK',
         'request': {
             'headers': _req.headers
         }
