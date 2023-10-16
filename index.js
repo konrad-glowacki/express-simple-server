@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3300;
 server.use(express.static('public'));
 
 server.get('/', (_req, res) => {
+  console.log('Hello home root message');
   res.send('Hello Express!');
 });
 
