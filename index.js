@@ -1,7 +1,7 @@
 const axios = require('axios');
 const express = require('express');
 const server = express();
-const PORT = process.env.EXPRESS_PORT || 3300;
+const PORT = process.env.PORT || 3300;
 
 server.use(express.static('public'));
 
