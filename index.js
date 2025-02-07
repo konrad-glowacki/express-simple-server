@@ -6,6 +6,12 @@ const PORT = process.env.PORT || 3300;
 server.use(express.static('public'));
 
 server.get('/', (_req, res) => {
+  if (process.env.APP_CRASH === 'true') {
+    throw new Error(
+      'App crashed because environment variable APP_CRASH is set to true'
+    );
+  }
+
   console.log('Hello home root message');
   res.send('Hello Express!');
 });
