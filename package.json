@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "wpe-build": "node build.js"
+    "build": "node build.js"
   },
   "author": "Konrad Glowacki <konrad.glowacki@wpengine.com> (wpengine.com)",
   "license": "ISC",
