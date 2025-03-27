@@ -13,7 +13,7 @@ server.get('/', (_req, res) => {
   }
 
   console.log('Hello home root message');
-  res.send('Hello Express!!!');
+  res.send('Hello Express!!!2');
 });
 
 server.get('/fetch-wordpress-graphql', async (_req, res) => {
